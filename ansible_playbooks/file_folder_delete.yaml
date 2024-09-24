@@ -1,0 +1,16 @@
+---
+- name: File Module
+  hosts: all 
+  become: true
+
+
+  tasks: 
+  - name: deleting  a file
+    file: 
+     path: /tmp/newfile.txt
+     state: absent
+
+  - name: deleting a directory
+    file:
+     path: /tmp/myfolder
+     state: absent  

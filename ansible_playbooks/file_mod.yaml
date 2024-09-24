@@ -1,0 +1,19 @@
+---
+- name: File Module
+  hosts: all 
+  become: true
+
+
+  tasks: 
+  - name: Creating a file
+    file: 
+     path: /tmp/newfile.txt
+     state: touch
+     owner: azureuser
+     group: azureuser
+     mode: u=rws,g=rw,o=r
+
+  - name: Creating a directory
+    file:
+     path: /tmp/myfolder
+     state: directory   
