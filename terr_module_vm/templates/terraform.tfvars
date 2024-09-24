@@ -1,0 +1,5 @@
+resource_group_name  = "test"
+virtual_network_name = "test_vnet"
+subnet_name          = "subnetest"
+public_ip_name       = "testipname"
+virtual_machine_name = "testvm "
