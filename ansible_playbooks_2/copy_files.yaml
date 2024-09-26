@@ -1,0 +1,15 @@
+---
+- name: Copying files to remote
+  hosts: all
+  become: true
+
+
+  tasks:
+  - name: Copy files
+    copy:
+      src: /home/shiv/Desktop/copy/myfile.txt
+      dest: /rmp/
+      owner: azureuser
+      group: azureuser
+      mode: 0777
+      backup: true

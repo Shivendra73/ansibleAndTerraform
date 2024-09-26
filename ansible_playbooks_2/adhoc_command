@@ -1,0 +1,50 @@
+1: ansible all -m ping
+2: ansible localhost -m ping 
+
+3: ansible all -m copy -a "src= /home/shiv/file dest=/tmp/script/ mode=0777" -b
+
+
+4: ansible all -m service -a "name=nginx state=reloaded" -b
+5: ansible all -m shell -a "/tmp/test.sh" -b
+
+6: ansible all -m command -a "free -h "
+
+7: ansible all -m command -a "df -h "
+
+8: ansible all -m apt -a "name=vim state=present"
+
+--------------tags in ansible -----------------
+9: ansible-playbook <playbook_nmae.yaml> --list-tags     
+
+10: ansible-playbook <playbook_name> -t <tag_name>
+
+---------------- varibles in ansible -------------------------
+vars:
+  - <name> 
+
+
+serverA ansible_host=10.211.55.9
+
+------------------------------handelers in ansible-----------------
+
+  notify:
+   - <handelers name>
+
+handelers:
+  - name: <handers_name>   
+
+
+-----------------------------conditional -------------------
+when: 
+ansible <name_hosts> -m setup  
+
+
+-------------------------------------------------------
+Roles: An ansible role is a structure way of grouping together variable functionalities and making it easier 
+       and share common setup tasks .
+
+
+   creating roles:  ansible-galaxy init <httpd_setup>   
+
+    --> defaults  files  handlers  meta  README.md  tasks  templates  tests  vars
+  

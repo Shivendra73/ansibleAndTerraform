@@ -1,0 +1,11 @@
+---
+- name: chnage permissions
+  hosts: all
+  become: true
+
+
+  tasks:
+  - name: chnage permissions
+    file: #module
+     path: /rmp/myfile.txt
+     mode: u=r,g=rw

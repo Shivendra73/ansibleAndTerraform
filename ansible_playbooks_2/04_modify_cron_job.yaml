@@ -1,0 +1,13 @@
+---
+- name: Modify Cron
+  hosts: all
+  become: true
+
+
+  tasks:
+  - name: Remove Cron Job 
+    cron:
+     name: Run Test Script
+     state: absent
+     user: azureuser
+   # disabled: yes

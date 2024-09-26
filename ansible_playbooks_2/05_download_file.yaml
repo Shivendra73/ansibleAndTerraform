@@ -1,0 +1,13 @@
+---
+- name: Download files
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Download files
+    get_url: 
+      url: https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tar.xz
+      dest: /rmp
+      owner: azureuser
+      group: azureuser
+      mode: 0777  
